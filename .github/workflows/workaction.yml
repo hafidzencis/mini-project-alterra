@@ -26,7 +26,7 @@ jobs:
       - name: Build docker image
         uses: docker/build-push-action@v2
         with:
-          file: 'unit-test.dockerfile'
+          file: './unit-test.dockerfile'
           context: .
           path: true
           tags: hafidzencis/cicdjacoco:latest
