@@ -86,4 +86,4 @@ jobs:
             docker rm cicdjacoco
             docker rmi hafidzencis/cicdjacoco:latest
             docker pull hafidzencis/cicdjacoco:latest
-            docker run -d --name cicdjacoco -p 80:8080 --env-file dev.env --network my_network hafidzencis/cicdjacoco:latest
+            docker run -d --name cicdjacoco -p 80:8080 --env-file dev.env --network thenetwork hafidzencis/cicdjacoco:latest
