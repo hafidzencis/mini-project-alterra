@@ -14,7 +14,6 @@ public class BasicController {
     @Autowired
     private BasicService basicService;
 
-
     @GetMapping(value = "")
     public ResponseEntity<Object> basic(){
         return basicService.basic();
