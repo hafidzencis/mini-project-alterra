@@ -86,5 +86,5 @@ jobs:
             docker rmi hafidzencis/cicdjacoco:latest hafidzencis/cicdjacoco-coverage:latest  
             docker pull hafidzencis/cicdjacoco:latest
             docker pull hafidzencis/cicdjacoco-coverage:latest
-            docker run -d --rm --name cicdjacoco-coverage -p 8000:80 hafidzencis/cicdjacoco:latest
-            docker run -d --rm --name cicdjacoco-coverage -p 80:8000 --env-file=dev.env --network thenetwork hafidzencis/cicdjacoco:latest
+            docker run -d --rm --name cicdjacoco-coverage -p 8000:80 hafidzencis/cicdjacoco-coverage:latest
+            docker run -d --rm --name cicdjacoco -p 80:8000 --env-file=dev.env --network thenetwork hafidzencis/cicdjacoco:latest
