@@ -18,4 +18,5 @@ public class BasicController {
     public ResponseEntity<Object> basic(){
         return basicService.basic();
     }
+
 }

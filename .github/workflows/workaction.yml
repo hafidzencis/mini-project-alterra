@@ -29,7 +29,7 @@ jobs:
           file: unit-test.dockerfile
           context: .
           push: true
-          tags: hafidzencis/cicdjacoco:latest
+          tags: hafidzencis/cicdjacoco-coverage:latest
 
 
   build:
@@ -82,8 +82,9 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            docker stop cicdjacoco
-            docker rm cicdjacoco
-            docker rmi hafidzencis/cicdjacoco:latest
+            docker stop cicdjacoco cicdjacoco-coverage
+            docker rmi hafidzencis/cicdjacoco:latest hafidzencis/cicdjacoco-coverage:latest  
             docker pull hafidzencis/cicdjacoco:latest
-            docker run -d --name cicdjacoco -p 80:8080 --env-file dev.env --network thenetwork hafidzencis/cicdjacoco:latest
+            docker pull hafidzencis/cicdjacoco-coverage:latest
+            docker run -d --rm --name cicdjacoco-coverage -p 8000:80 hafidzencis/cicdjacoco:latest
+            docker run -d --rm --name cicdjacoco-coverage -p 80:8000 --env-file=dev.env --network thenetwork hafidzencis/cicdjacoco:latest

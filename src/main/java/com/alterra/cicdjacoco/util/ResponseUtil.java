@@ -16,8 +16,7 @@ public class ResponseUtil {
     }
 
     private static <T> ApiResponse<T> build(String message, T data) {
-        return ApiResponse.<T>builder()
-
+        return ApiResponse.<T> builder()
                 .localDateTime(LocalDateTime.now())
                 .message(message)
                 .data(data)

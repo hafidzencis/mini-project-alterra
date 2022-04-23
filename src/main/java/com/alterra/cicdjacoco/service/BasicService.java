@@ -14,5 +14,8 @@ public class BasicService {
         return ResponseUtil.build("Hello World From Spring Boot",null, HttpStatus.OK);
     }
 
+    public ResponseEntity<Object> error(String message){
+        return ResponseUtil.build(message, null, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 
 }
