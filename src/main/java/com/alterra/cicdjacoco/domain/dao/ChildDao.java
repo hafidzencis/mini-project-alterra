@@ -2,19 +2,23 @@ package com.alterra.cicdjacoco.domain.dao;
 
 
 import com.alterra.cicdjacoco.domain.common.BaseDao;
+import com.alterra.cicdjacoco.domain.dto.TeamDto;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "child")
@@ -33,8 +37,11 @@ public class ChildDao extends BaseDao {
     @JsonFormat(pattern="yyyy-MM-dd")
     private LocalDate dob;
 
-//    @ManyToOne
-//    @JoinColumn(name = "userId")
-//    private UserDao user_id;
+    @ManyToOne
+    private UserDao user;
+
+    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "childs")
+    private List<ChooseTeamDao> chooseTeamDaos;
 
 }

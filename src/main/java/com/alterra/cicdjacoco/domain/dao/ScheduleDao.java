@@ -3,35 +3,30 @@ package com.alterra.cicdjacoco.domain.dao;
 
 import com.alterra.cicdjacoco.domain.common.BaseDao;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-
-
+import java.time.LocalDate;
 
 @Data
 @Entity
-@SuperBuilder
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "choose_team")
-
-public class ChooseTeamDao {
+@Table(name ="schedule")
+public class ScheduleDao extends BaseDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //    @Id
-    @ManyToOne
-    @JoinColumn(name = "child_id")
-    private ChildDao childs;
+    @Column(name = "day_schedule")
+    private String daySchedule;
 
-    //    @Id
-    @ManyToOne
-    @JoinColumn(name = "team_id")
-    private TeamDao teams;
+    @Column(name = "time_schedule")
+    private String timeSchedule;
+
+
 }

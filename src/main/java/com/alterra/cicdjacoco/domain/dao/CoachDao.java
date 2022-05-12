@@ -1,6 +1,8 @@
 package com.alterra.cicdjacoco.domain.dao;
 
+import com.alterra.cicdjacoco.domain.common.BaseDao;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,11 +10,12 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "coach")
-public class CoachDao {
+public class CoachDao extends BaseDao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,11 +24,10 @@ public class CoachDao {
     private String coachName;
 
     @Column(name = "telephone_number")
-    private String telephone_number;
+    private String telephoneNumber;
 
     @Column(name = "address")
     private String address;
 
-    @OneToMany(mappedBy = "coach_id")
-    private List<TeamDao> teams;
+
 }
