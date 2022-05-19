@@ -1,24 +1,22 @@
 package com.alterra.cicdjacoco.domain.dto;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDate;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChildDto {
-    private Long id;
-    private String playerName;
-    private String placeDob;
-    private LocalDate dob;
-    private UserDto user;
+public class CoachDto {
 
+    private Long id;
+    private String coachName;
+    private String telephoneNumber;
+    private String address;
 }
