@@ -6,5 +6,4 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ChildRepository extends JpaRepository<ChildDao,Long> {
-
 }

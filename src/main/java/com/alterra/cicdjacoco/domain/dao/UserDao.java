@@ -1,9 +1,7 @@
 package com.alterra.cicdjacoco.domain.dao;
 
 
-import com.alterra.cicdjacoco.domain.common.BaseDao;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,12 +9,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Builder
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "user")
-public class UserDao extends BaseDao {
+public class UserDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,8 +34,10 @@ public class UserDao extends BaseDao {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "is_admin")
-    private Boolean isAdmin;
+    @Column(name = "is_boolean_admin")
+    private Boolean is_boolean_admin;
 
+//    @OneToMany(mappedBy = "user_id")
+//    List<ChildDao> childs;
 
 }
