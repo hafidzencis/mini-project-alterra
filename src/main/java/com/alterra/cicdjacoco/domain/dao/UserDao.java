@@ -34,8 +34,8 @@ public class UserDao {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "is_boolean_admin")
-    private Boolean is_boolean_admin;
+    @Column(name = "author")
+    private String author;
 
 //    @OneToMany(mappedBy = "user_id")
 //    List<ChildDao> childs;

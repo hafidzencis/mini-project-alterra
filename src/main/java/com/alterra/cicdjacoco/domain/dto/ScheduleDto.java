@@ -1,6 +1,6 @@
 package com.alterra.cicdjacoco.domain.dto;
 
-
+import com.alterra.cicdjacoco.domain.dao.TeamDao;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,11 +14,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChildDto {
+public class ScheduleDto {
     private Long id;
-    private String playerName;
-    private String placeDob;
-    private LocalDate dob;
-    private UserDto user;
-
+    private String daySchedule;
+    private String timeSchedule;
 }
