@@ -45,4 +45,15 @@ public class ChooseTeamController {
     public ResponseEntity<Object> findChildById(@RequestParam(value = "child_name",required = false) String childName){
         return chooseTeamService.findChildByName(childName);
     }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Object> deleteChooseTema(Principal principal, @PathVariable Long id){
+        UserDao user = (UserDao) userService.loadUserByUsername(principal.getName());
+        if (user.getAuthor().equals("ADMIN")){
+            return chooseTeamService.deleteChooseTeam(id);
+        }
+        return ResponseUtil.build(ResponseMassage.NON_AUTHORIZED,null, HttpStatus.BAD_REQUEST);
+
+
+    }
 }

@@ -111,9 +111,23 @@ public class ChooseTeamService {
         }catch (Exception e){
             log.error("Get an error by executing find child by name,Error : {}",e.getMessage());
             return ResponseUtil.build(ResponseMassage.KEY_NOT_FOUND,null,HttpStatus.INTERNAL_SERVER_ERROR);
-
-
         }
 
+    }
+
+    public ResponseEntity<Object> deleteChooseTeam(Long id){
+        try {
+            Optional<ChooseTeamDao> chooseTeamDaoOptional = chooseTeamRepository.findById(id);
+
+            if (chooseTeamDaoOptional.isEmpty()){
+                log.info(" choose team not found");
+                return ResponseUtil.build(ResponseMassage.KEY_NOT_FOUND,null,HttpStatus.BAD_REQUEST);
+            }
+            chooseTeamRepository.delete(chooseTeamDaoOptional.get());
+            return ResponseUtil.build(ResponseMassage.KEY_FOUND,null,HttpStatus.OK);
+        }catch (Exception e){
+            log.error("Get an error by executing delete choose Team");
+            return ResponseUtil.build(ResponseMassage.KEY_NOT_FOUND,null,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 }
