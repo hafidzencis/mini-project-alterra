@@ -5,7 +5,6 @@ import com.alterra.cicdjacoco.constantapp.ResponseMassage;
 import com.alterra.cicdjacoco.domain.common.ApiResponse;
 import com.alterra.cicdjacoco.domain.dao.ChildDao;
 import com.alterra.cicdjacoco.domain.dto.ChildDto;
-import com.alterra.cicdjacoco.repository.ChildRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.modelmapper.ModelMapper;
@@ -18,7 +17,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
