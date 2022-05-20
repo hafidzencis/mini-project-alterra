@@ -54,6 +54,5 @@ public class ChooseTeamController {
         }
         return ResponseUtil.build(ResponseMassage.NON_AUTHORIZED,null, HttpStatus.BAD_REQUEST);
 
-
     }
 }
