@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -71,7 +72,7 @@ public class UserServiceTest {
                 .username("hafidzencis")
                 .password("jokowilover")
                 .build();
-        when(userRepository.findAll()).thenReturn(List.of(userDao));
+        when(userRepository.findAll()).thenReturn(Collections.emptyList());
 //        when(modelMapper.map(any(),eq(UserDto.class)))
 //                .thenReturn(UserDto.builder()
 //                        .id(1L)
