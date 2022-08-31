@@ -87,4 +87,4 @@ jobs:
             docker pull hafidzencis/cicdjacoco:latest
             docker pull hafidzencis/cicdjacoco-coverage:latest
             docker run -d --rm --name cicdjacoco-coverage -p 8000:80 hafidzencis/cicdjacoco-coverage:latest
-            docker run -d --rm --name cicdjacoco -p 443:8080 -p 80:8080 --env-file=dev.env --network thenetwork hafidzencis/cicdjacoco:latest
+            docker run -d --rm --name cicdjacoco -p 443:8080 -p 80:8080 --env-file=dev.env --network mynetwork hafidzencis/cicdjacoco:latest
