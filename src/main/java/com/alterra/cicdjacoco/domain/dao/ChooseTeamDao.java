@@ -12,7 +12,7 @@ import javax.persistence.*;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "choose_team")
+@Table(name = "m_choose_team")
 
 public class ChooseTeamDao {
 

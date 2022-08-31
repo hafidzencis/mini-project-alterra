@@ -19,7 +19,7 @@ import java.util.List;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "team")
+@Table(name = "m_team")
 @SQLDelete(sql = "UPDATE team SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class TeamDao extends BaseDao {

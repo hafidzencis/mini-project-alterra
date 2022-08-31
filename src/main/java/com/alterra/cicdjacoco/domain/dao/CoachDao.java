@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "coach")
+@Table(name = "m_coach")
 @SQLDelete(sql = "UPDATE coach SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class CoachDao extends BaseDao {
