@@ -1,5 +1,5 @@
-# cicdjacoco
-Use for monitoring coverage
+# Mini Project
+
 <br /><br />
 
 [Jacoco](http://54.146.214.118:8000/com.alterra.cicdjacoco.service/index.html)<br />
