@@ -1,6 +1,6 @@
 # Mini Project
 
-## Project Name : Register School Club for children
+## Project Name : Register School Club Children for Parent
 <br />
 
 [Jacoco](http://54.146.214.118:8000/com.alterra.cicdjacoco.service/index.html)<br />
